@@ -66,7 +66,7 @@
       }
     }
   ],
-  "post-processors": [
+  "post-processors": [[
     {
       "output": "builds/{{user `box_basename`}}.{{.Provider}}.box",
       "type": "vagrant"
@@ -78,7 +78,7 @@
       "artifact_type": "vagrant.box",
       "metadata": {
         "provider": "vmware_desktop",
-        "version": "0.0.1"
+        "version": "0.0.2"
       }
     },
     {
@@ -88,10 +88,10 @@
       "artifact_type": "vagrant.box",
       "metadata": {
         "provider": "virtualbox",
-        "version": "0.0.1"
+        "version": "0.0.2"
       }
     }
-  ],
+  ]],
   "provisioners": [
     {
       "destination": "/tmp/bento-metadata.json",
