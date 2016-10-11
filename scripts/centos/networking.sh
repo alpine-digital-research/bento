@@ -11,7 +11,8 @@ virtualbox-iso|virtualbox-ovf)
         # generated
         # https://access.redhat.com/site/solutions/58625 (subscription required)
         echo 'RES_OPTIONS="single-request-reopen"' >>/etc/sysconfig/network;
-        service network restart;
+        # service network restart;
+
         echo 'Slow DNS fix applied (single-request-reopen)';
     fi
     ;;
