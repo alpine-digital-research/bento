@@ -103,7 +103,7 @@
   "variables": {
     "box_basename": "centos-7.2",
     "build_timestamp": "{{isotime \"20060102150405\"}}",
-    "cpus": "1",
+    "cpus": "2",
     "disk_size": "40960",
     "git_revision": "__unknown_git_revision__",
     "headless": "",
@@ -113,7 +113,7 @@
     "iso_checksum_type": "sha256",
     "iso_name": "CentOS-7-x86_64-DVD-1511.iso",
     "ks_path": "centos-7.2/ks.cfg",
-    "memory": "512",
+    "memory": "4096",
     "metadata": "floppy/dummy_metadata.json",
     "mirror": "http://mirrors.kernel.org/centos",
     "mirror_directory": "7.2.1511/isos/x86_64",
