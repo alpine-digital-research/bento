@@ -70,6 +70,26 @@
     {
       "output": "builds/{{user `box_basename`}}.{{.Provider}}.box",
       "type": "vagrant"
+    },
+    {
+      "type": "atlas",
+      "only": ["vmware-iso"],
+      "artifact": "alpine-digital-research/centos-7.2",
+      "artifact_type": "vagrant.box",
+      "metadata": {
+        "provider": "vmware_desktop",
+        "version": "0.0.1"
+      }
+    },
+    {
+      "type": "atlas",
+      "only": ["virtualbox-iso"],
+      "artifact": "alpine-digital-research/centos-7.2",
+      "artifact_type": "vagrant.box",
+      "metadata": {
+        "provider": "virtualbox",
+        "version": "0.0.1"
+      }
     }
   ],
   "provisioners": [
