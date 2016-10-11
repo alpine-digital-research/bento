@@ -16,19 +16,19 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
        https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
 
-setenforce 0
-
-systemctl enable kubelet && systemctl start kubelet
+# setenforce 0
 
 yum install -y kubelet kubeadm kubectl kubernetes-cni
 
-kubeadm init
+# systemctl enable kubelet && systemctl start kubelet
 
-sed -i 's/443/6443/' /etc/kubernetes/admin.conf
-sed -i 's/443/6443/' /etc/kubernetes/kubelet.conf
-sed -i 's/443/6443/' /etc/kubernetes/manifests/kube-apiserver.conf
+# kubeadm init
 
-systemctl restart kubelet
+# sed -i 's/443/6443/' /etc/kubernetes/admin.conf
+# sed -i 's/443/6443/' /etc/kubernetes/kubelet.conf
+# sed -i 's/443/6443/' /etc/kubernetes/manifests/kube-apiserver.conf
 
-kubectl taint nodes --all dedicated-
-kubectl apply -f https://git.io/weave-kube
+# systemctl restart kubelet
+
+# kubectl taint nodes --all dedicated-
+# kubectl apply -f https://git.io/weave-kube
