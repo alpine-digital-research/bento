@@ -78,7 +78,7 @@
       "artifact_type": "vagrant.box",
       "metadata": {
         "provider": "vmware_desktop",
-        "version": "0.0.2"
+        "version": "0.1.0{{env `ATLAS_BUILD_NUMBER`}}"
       }
     },
     {
@@ -88,7 +88,7 @@
       "artifact_type": "vagrant.box",
       "metadata": {
         "provider": "virtualbox",
-        "version": "0.0.2"
+        "version": "0.1.0{{env `ATLAS_BUILD_NUMBER`}}"
       }
     }
   ]],
