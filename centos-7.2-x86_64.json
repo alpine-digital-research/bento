@@ -78,7 +78,7 @@
       "artifact_type": "vagrant.box",
       "metadata": {
         "provider": "vmware_desktop",
-        "version": "0.1.0{{env `ATLAS_BUILD_NUMBER`}}"
+        "version": "0.1.0{{ user `version` }}"
       }
     },
     {
@@ -88,7 +88,7 @@
       "artifact_type": "vagrant.box",
       "metadata": {
         "provider": "virtualbox",
-        "version": "0.1.0{{env `ATLAS_BUILD_NUMBER`}}"
+        "version": "0.1.0{{ user `version` }}"
       }
     }
   ]],
@@ -143,6 +143,6 @@
     "name": "centos-7.2",
     "no_proxy": "{{env `no_proxy`}}",
     "template": "centos-7.2-x86_64",
-    "version": "2.1.TIMESTAMP"
+    "version": "0.1.0{{ env `ATLAS_BUILD_NUMBER` }}"
   }
 }
