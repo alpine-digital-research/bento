@@ -16,7 +16,7 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
        https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
 
-# setenforce 0
+setenforce 0
 
 yum install -y kubelet kubeadm kubectl kubernetes-cni
 
