@@ -15,11 +15,29 @@ vmware-iso|vmware-vmx)
 
     echo "VMware Tools Version: $VER";
 
+cat > /tmp/answer << __ANSWER__
+yes
+/usr/bin
+/etc
+/etc/init.d
+/usr/sbin
+/usr/lib/vmware-tools
+yes
+/usr/share/doc/vmware-tools
+yes
+yes
+yes
+no
+yes
+yes
+
+__ANSWER__
+
     tar xzf ${TOOLS_PATH} -C /tmp/vmware-archive;
     if [ "${MAJ_VER}" -lt "10" ]; then
-        /tmp/vmware-archive/vmware-tools-distrib/vmware-install.pl --default;
+        /tmp/vmware-archive/vmware-tools-distrib/vmware-install.pl < /tmp/answer;
     else
-        /tmp/vmware-archive/vmware-tools-distrib/vmware-install.pl --force-install;
+        /tmp/vmware-archive/vmware-tools-distrib/vmware-install.pl < /tmp/answer;
     fi
     umount /tmp/vmware;
     rm -rf  /tmp/vmware;
