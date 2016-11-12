@@ -9,6 +9,8 @@ vmware-iso|vmware-vmx)
     mkdir -p /tmp/vmware-archive;
     mount -o loop $HOME_DIR/linux.iso /tmp/vmware;
 
+    yum -y install gcc kernel-devel
+
     TOOLS_PATH="`ls /tmp/vmware/VMwareTools-*.tar.gz`";
     VER="`echo "${TOOLS_PATH}" | cut -f2 -d'-'`";
     MAJ_VER="`echo ${VER} | cut -d '.' -f 1`";
@@ -21,6 +23,9 @@ vmware-iso|vmware-vmx)
     else
         /tmp/vmware-archive/vmware-tools-distrib/vmware-install.pl --force-install;
     fi
+
+    vmware-config-tools.pl -d
+
     umount /tmp/vmware;
     rm -rf  /tmp/vmware;
     rm -rf  /tmp/vmware-archive;

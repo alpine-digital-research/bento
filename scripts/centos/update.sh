@@ -1,8 +1,5 @@
 #!/bin/sh -eux
 
-# Totally wrong place for this, but needed by vmware tools to successfully install.
-yum -y install kernel-devel kernel-headers
-
 yum -y update
 
 # Automatic updates to the kernel will cause vmware's tools to fall
