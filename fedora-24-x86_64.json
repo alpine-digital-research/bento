@@ -60,7 +60,6 @@
       "type": "vmware-iso",
       "vm_name": "{{ user `template` }}",
       "vmx_data": {
-        "cpuid.coresPerSocket": "1",
         "memsize": "{{ user `memory` }}",
         "numvcpus": "{{ user `cpus` }}"
       }
@@ -126,7 +125,7 @@
     "box_basename": "fedora-24",
     "build_timestamp": "{{isotime \"20060102150405\"}}",
     "cpus": "1",
-    "disk_size": "40960",
+    "disk_size": "20480",
     "git_revision": "__unknown_git_revision__",
     "headless": "true",
     "http_proxy": "{{env `http_proxy`}}",
