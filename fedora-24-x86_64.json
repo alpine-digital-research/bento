@@ -79,7 +79,7 @@
       "artifact_type": "vagrant.box",
       "metadata": {
         "provider": "vmware_desktop",
-        "version": "0.1.0{{ user `version` }}"
+        "version": "0.{{ user `version` }}"
       }
     },
     {
@@ -89,7 +89,7 @@
       "artifact_type": "vagrant.box",
       "metadata": {
         "provider": "virtualbox",
-        "version": "0.1.0{{ user `version` }}"
+        "version": "0.{{ user `version` }}"
       }
     }
   ]],
@@ -143,6 +143,6 @@
     "name": "fedora-24",
     "no_proxy": "{{env `no_proxy`}}",
     "template": "fedora-24-x86_64",
-    "version": "0.{{ env `ATLAS_BUILD_NUMBER` }}"
+    "version": "{{ env `ATLAS_BUILD_NUMBER` }}"
   }
 }
