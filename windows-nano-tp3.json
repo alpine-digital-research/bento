@@ -59,16 +59,22 @@
       "winrm_username": "vagrant"
     }
   ],
-  "post-processors": [
+  "post-processors": [[
     {
       "output": "builds/{{user `box_basename`}}.{{.Provider}}.box",
       "type": "vagrant",
       "vagrantfile_template": "vagrantfile_templates/windows-nano.rb"
+    },
+    {
+      "type": "vagrant-cloud",
+      "box_tag": "alpine-digital-research/{{ user `box_basename` }}",
+      "version": "{{ user `version` }}",
+      "access_token": "{{ user `access_token` }}"
     }
-  ],
+  ]],
   "variables": {
     "box_basename": "windows-nano",
-    "build_timestamp": "{{isotime \"20060102150405\"}}",
+    "build_{{timestamp}}": "{{isotime \"20060102150405\"}}",
     "cpus": "2",
     "disk_size": "61440",
     "git_revision": "__unknown_git_revision__",
@@ -79,7 +85,7 @@
     "memory": "2048",
     "metadata": "floppy/dummy_metadata.json",
     "template": "windows-nano-tp3",
-    "version": "1.1.TIMESTAMP"
-  }
+    "version": "1.1.{{timestamp}}",
+    "access_token": "{{ env `ATLAS_TOKEN` }}"  }
 }
 

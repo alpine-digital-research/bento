@@ -123,12 +123,18 @@
       "vm_name": "{{ user `template` }}"
     }
   ],
-  "post-processors": [
+  "post-processors": [[
     {
       "output": "builds/{{user `box_basename`}}.{{.Provider}}.box",
       "type": "vagrant"
+    },
+    {
+      "type": "vagrant-cloud",
+      "box_tag": "alpine-digital-research/{{ user `box_basename` }}",
+      "version": "{{ user `version` }}",
+      "access_token": "{{ user `access_token` }}"
     }
-  ],
+  ]],
   "provisioners": [
     {
       "destination": "/tmp/bento-metadata.json",
@@ -160,7 +166,7 @@
   "variables": {
     "arch": "32",
     "box_basename": "rhel-6.9-i386",
-    "build_timestamp": "{{isotime \"20060102150405\"}}",
+    "build_{{timestamp}}": "{{isotime \"20060102150405\"}}",
     "cpus": "1",
     "disk_size": "40960",
     "git_revision": "__unknown_git_revision__",
@@ -178,7 +184,7 @@
     "name": "rhel-6.9-i386",
     "no_proxy": "{{env `no_proxy`}}",
     "template": "rhel-6.9-i386",
-    "version": "TIMESTAMP"
-  }
+    "version": "{{timestamp}}",
+    "access_token": "{{ env `ATLAS_TOKEN` }}"  }
 }
 

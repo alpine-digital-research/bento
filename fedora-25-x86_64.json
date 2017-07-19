@@ -68,7 +68,7 @@
       "vmx_remove_ethernet_interfaces": true
     }
   ],
-  "post-processors": [
+  "post-processors": [[
     {
       "output": "builds/{{user `box_basename`}}.{{.Provider}}.box",
       "type": "vagrant"
@@ -76,12 +76,12 @@
     {
       "type": "atlas",
       "only": ["vmware-iso"],
-      "artifact": "alpine-digital-research/fedora-25",
+      "artifact": "alpine-digital-research/{{ user `box_basename` }}",
       "artifact_type": "vagrant.box",
       "metadata": {
         "provider": "vmware_desktop",
-        "version": "0.{{ user `version` }}"
-      }
+        "version": "0.{{ user `version` }}",
+    "access_token": "{{ env `ATLAS_TOKEN` }}"      }
     },
     {
       "type": "atlas",
@@ -90,8 +90,8 @@
       "artifact_type": "vagrant.box",
       "metadata": {
         "provider": "virtualbox",
-        "version": "0.{{ user `version` }}"
-      }
+        "version": "0.{{ user `version` }}",
+    "access_token": "{{ env `ATLAS_TOKEN` }}"      }
     }
   ],
   "provisioners": [
@@ -127,7 +127,7 @@
   "variables": {
     "arch": "64",
     "box_basename": "fedora-25",
-    "build_timestamp": "{{isotime \"20060102150405\"}}",
+    "build_{{timestamp}}": "{{isotime \"20060102150405\"}}",
     "cpus": "1",
     "disk_size": "40960",
     "git_revision": "__unknown_git_revision__",
@@ -145,7 +145,7 @@
     "name": "fedora-25",
     "no_proxy": "{{env `no_proxy`}}",
     "template": "fedora-25-x86_64",
-    "version": "{{ env `ATLAS_BUILD_NUMBER` }}"
-  }
+    "version": "{{ env `ATLAS_BUILD_NUMBER` }}",
+    "access_token": "{{ env `ATLAS_TOKEN` }}"  }
 }
 

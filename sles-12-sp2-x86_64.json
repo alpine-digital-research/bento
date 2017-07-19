@@ -139,12 +139,18 @@
       "vm_name": "{{ user `template` }}"
     }
   ],
-  "post-processors": [
+  "post-processors": [[
     {
       "output": "builds/{{user `box_basename`}}.{{.Provider}}.box",
       "type": "vagrant"
+    },
+    {
+      "type": "vagrant-cloud",
+      "box_tag": "alpine-digital-research/{{ user `box_basename` }}",
+      "version": "{{ user `version` }}",
+      "access_token": "{{ user `access_token` }}"
     }
-  ],
+  ]],
   "provisioners": [
     {
       "destination": "/tmp/bento-metadata.json",
@@ -182,7 +188,7 @@
     "arch": "64",
     "autoinst_cfg": "sles-12/sles-12-sp2-x86_64-autoinst.xml",
     "box_basename": "sles-12-sp2",
-    "build_timestamp": "{{isotime \"20060102150405\"}}",
+    "build_{{timestamp}}": "{{isotime \"20060102150405\"}}",
     "cpus": "1",
     "disk_size": "20480",
     "git_revision": "__unknown_git_revision__",
@@ -197,7 +203,7 @@
     "mirror": "./packer_cache",
     "name": "sles-12-sp2",
     "template": "sles-12-sp2-x86_64",
-    "version": "TIMESTAMP"
-  }
+    "version": "{{timestamp}}",
+    "access_token": "{{ env `ATLAS_TOKEN` }}"  }
 }
 
