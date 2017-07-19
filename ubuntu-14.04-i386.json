@@ -105,7 +105,8 @@
         "cpuid.coresPerSocket": "1",
         "memsize": "{{ user `memory` }}",
         "numvcpus": "{{ user `cpus` }}"
-      }
+      },
+      "vmx_remove_ethernet_interfaces": true
     },
     {
       "boot_command": [
@@ -254,14 +255,15 @@
     "iso_checksum": "976044842804eafc18390505508958b559c131211160ecae5e60694bdf171f78",
     "iso_checksum_type": "sha256",
     "iso_name": "ubuntu-14.04.1-server-i386.iso",
-    "memory": "512",
+    "memory": "1024",
     "metadata": "floppy/dummy_metadata.json",
     "mirror": "http://old-releases.ubuntu.com/releases",
     "mirror_directory": "14.04.1",
     "name": "ubuntu-14.04-i386",
     "no_proxy": "{{env `no_proxy`}}",
-    "preseed_path": "ubuntu-14.04/preseed.cfg",
+    "preseed_path": "ubuntu/preseed.cfg",
     "template": "ubuntu-14.04-i386",
-    "version": "2.1.TIMESTAMP"
+    "version": "TIMESTAMP"
   }
 }
+

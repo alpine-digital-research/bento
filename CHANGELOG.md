@@ -1,5 +1,60 @@
 # Change Log
 
+## [2.3.7](https://github.com/chef/bento/tree/2.3.7) (2017-07-03)
+
+**New**
+- Debian 8.8
+- Debian 9.0 [\#818](https://github.com/chef/bento/pull/818)
+- Oracle 6.9
+- Ubuntu 17.04 [\#808](https://github.com/chef/bento/pull/808)
+
+**Removed**
+- OmniOS
+- Ubuntu 12.04
+- SLES 12 / 12 SP1
+
+**Fixes**
+- Fedora cleanup and size reduction
+
+## [2.3.6](https://github.com/chef/bento/tree/2.3.6) (2017-05-03)
+
+- Release for fixed VirtualBox 5.1.22
+
+## [2.3.5](https://github.com/chef/bento/tree/2.3.5) (2017-04-24)
+
+- Release primarily around broken VirtualBox 5.1.20/21 (fixed)
+
+**New**
+- CentOS 6.9 [\#788](https://github.com/chef/bento/pull/788)
+
+**Fixes**
+- Oracle 6.8 `box_basename` [\#784](https://github.com/chef/bento/pull/784)
+- MacOS 10.12 issue w/ memory var [\#768](https://github.com/chef/bento/pull/768)
+
+## [2.3.4](https://github.com/chef/bento/tree/2.3.4) (2017-03-23)
+
+- Mostly rebuilt for updated hypervisors: VirtualBox 5.1.18 and VMware Fusion 8.5.5
+- Better cleanup for Fedora boxes
+
+## [2.3.3](https://github.com/chef/bento/tree/2.3.3) (2017-02-19)
+
+**Added and Updated Platforms**
+- Debian 8.7
+
+## [2.3.2](https://github.com/chef/bento/tree/2.3.2) (2016-12-19)
+[Full Changelog](https://github.com/chef/bento/compare/2.3.1...2.3.2)
+
+**Added and Updated Platforms**
+- CentOS and RHEL 7.3 [\#739](https://github.com/chef/bento/pull/739) ([rickard-von-essen](https://github.com/rickard-von-essen))
+- SLES 12 SP2 [\#735](https://github.com/chef/bento/pull/735) ([mattiasgiese](https://github.com/mattiasgiese))
+
+**Improvements**
+- Update VMware tools to fix CentOS 7.3 build [\#743](https://github.com/chef/bento/pull/743) ([cheeseplus](https://github.com/cheeseplus))
+- Remove CentOS requiretty sudoers workaround, this is now the default [\#740](https://github.com/chef/bento/pull/740) ([mvermaes](https://github.com/mvermaes))
+
+**Pipeline**
+- Use the bento-ya gem, add builds.yml [\#745](https://github.com/chef/bento/pull/745) ([cheeseplus](https://github.com/cheeseplus))
+
 ## [2.3.1](https://github.com/chef/bento/tree/2.3.1) (2016-11-30)
 [Full Changelog](https://github.com/chef/bento/compare/2.3.0...2.3.1)
 

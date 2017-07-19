@@ -63,7 +63,8 @@
         "cpuid.coresPerSocket": "1",
         "memsize": "{{ user `memory` }}",
         "numvcpus": "{{ user `cpus` }}"
-      }
+      },
+      "vmx_remove_ethernet_interfaces": true
     },
     {
       "boot_command": [
@@ -169,14 +170,15 @@
     "iso_checksum": "2ad5327428c44d505a7d882a273cb3f5fbac4e56e739cf18f895565dde987101",
     "iso_checksum_type": "sha256",
     "iso_name": "OracleLinux-R7-U3-Server-x86_64-dvd.iso",
-    "ks_path": "centos-7.2/ks.cfg",
-    "memory": "512",
+    "ks_path": "centos-7.3/ks.cfg",
+    "memory": "1024",
     "metadata": "floppy/dummy_metadata.json",
     "mirror": "http://mirrors.dotsrc.org/oracle-linux",
     "mirror_directory": "OL7/u3/x86_64",
     "name": "oracle-7.3",
     "no_proxy": "{{env `no_proxy`}}",
     "template": "oracle-7.3-x86_64",
-    "version": "2.2.TIMESTAMP"
+    "version": "TIMESTAMP"
   }
 }
+

@@ -1,12 +1,7 @@
 #!/bin/bash -eux
 # These were only needed for building VMware/Virtualbox extensions:
 
-version=`grep VERSION= /etc/os-release | cut -f2 -d\" | cut -f1 -d\ `
+zypper -n rm -u gcc make kernel-default-devel kernel-devel
 
-if [[ $version =~ "13" ]]; then
-  zypper -n rm -u binutils gcc make ruby kernel-default-devel kernel-devel
-fi
-
-if [[ $version =~ "4" ]]; then
-  zypper -n rm -u gcc make kernel-default-devel kernel-devel
-fi
+# delete any logs that have built up during the install
+find /var/log/ -name *.log -exec rm -f {} \;

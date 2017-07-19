@@ -71,7 +71,8 @@
         "cpuid.coresPerSocket": "1",
         "memsize": "{{ user `memory` }}",
         "numvcpus": "{{ user `cpus` }}"
-      }
+      },
+      "vmx_remove_ethernet_interfaces": true
     },
     {
       "boot_command": [
@@ -195,6 +196,7 @@
     "name": "opensuse-leap-42.2",
     "no_proxy": "{{env `no_proxy`}}",
     "template": "opensuse-leap-42.2-x86_64",
-    "version": "2.0.TIMESTAMP"
+    "version": "TIMESTAMP"
   }
 }
+

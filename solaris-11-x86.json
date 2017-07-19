@@ -111,7 +111,8 @@
         "cpuid.coresPerSocket": "1",
         "memsize": "{{ user `memory` }}",
         "numvcpus": "{{ user `cpus` }}"
-      }
+      },
+      "vmx_remove_ethernet_interfaces": true
     }
   ],
   "post-processors": [
@@ -154,6 +155,7 @@
     "mirror": "./packer_cache",
     "name": "solaris-11.3",
     "template": "solaris-11.3-x86",
-    "version": "2.0.TIMESTAMP"
+    "version": "TIMESTAMP"
   }
 }
+

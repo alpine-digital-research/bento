@@ -91,7 +91,8 @@
         "cpuid.coresPerSocket": "1",
         "memsize": "{{ user `memory` }}",
         "numvcpus": "{{ user `cpus` }}"
-      }
+      },
+      "vmx_remove_ethernet_interfaces": true
     },
     {
       "boot_command": [
@@ -169,11 +170,11 @@
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_url": "{{user `mirror`}}/{{user `mirror_directory`}}/{{user `iso_name`}}",
       "output_directory": "packer-{{user `template`}}-qemu",
-      "ssh_username": "vagrant",
+      "shutdown_command": "echo 'vagrant'|sudo -S /sbin/shutdown -hP now",
       "ssh_password": "vagrant",
       "ssh_port": 22,
+      "ssh_username": "vagrant",
       "ssh_wait_timeout": "10000s",
-      "shutdown_command": "echo 'vagrant'|sudo -S /sbin/shutdown -hP now",
       "type": "qemu",
       "vm_name": "{{ user `template` }}"
     }
@@ -226,7 +227,7 @@
     "iso_checksum": "cbae9d679dbe2d37828a5abb9d3ea8c40183972952180843d8b07f7b33e09877",
     "iso_checksum_type": "sha256",
     "iso_name": "debian-7.11.0-amd64-CD-1.iso",
-    "memory": "512",
+    "memory": "1024",
     "metadata": "floppy/dummy_metadata.json",
     "mirror": "http://cdimage.debian.org/cdimage/archive",
     "mirror_directory": "7.11.0/amd64/iso-cd",
@@ -234,6 +235,7 @@
     "no_proxy": "{{env `no_proxy`}}",
     "preseed_path": "debian-7/preseed.cfg",
     "template": "debian-7.11-amd64",
-    "version": "2.1.TIMESTAMP"
+    "version": "TIMESTAMP"
   }
 }
+

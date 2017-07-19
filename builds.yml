@@ -1,0 +1,66 @@
+---
+providers:
+  - parallels-iso
+  - virtualbox-iso
+  - vmware-iso
+
+public:
+  centos:
+    '6.9':
+    - x86_64
+    - i386
+    '7.3':
+    - x86_64
+  oracle:
+    '6.9':
+    - x86_64
+    - i386
+    '7.3':
+    - x86_64
+  debian:
+    '7.11':
+    - amd64
+    - i386
+    '8.8':
+    - amd64
+    - i386
+    '9.0':
+    - amd64
+  fedora:
+    '24':
+    - x86_64
+    '25':
+    - x86_64
+    '26':
+    - x86_64
+  freebsd:
+    '10.3':
+    - amd64
+    '11.0':
+    - amd64
+  opensuse-leap:
+    '42.2':
+    - x86_64
+  ubuntu:
+    '14.04':
+    - amd64
+    - i386
+    '16.04':
+    - amd64
+    - i386
+    '17.04':
+    - amd64
+    - i386
+
+private:
+  rhel:
+    '6.9':
+    - x86_64
+    - i386
+    '7.3':
+    - x86_64
+
+broken:
+  - opensuse-leap-42.2-x86_64-parallels-iso
+  - opensuse-leap-42.2-x86_64-vmware-iso
+  - debian-9.0-x86_64-vmware-iso

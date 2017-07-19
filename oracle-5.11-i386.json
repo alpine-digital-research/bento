@@ -63,7 +63,8 @@
         "cpuid.coresPerSocket": "1",
         "memsize": "{{ user `memory` }}",
         "numvcpus": "{{ user `cpus` }}"
-      }
+      },
+      "vmx_remove_ethernet_interfaces": true
     },
     {
       "boot_command": [
@@ -169,13 +170,14 @@
     "iso_checksum_type": "sha1",
     "iso_name": "Enterprise-R5-U11-Server-i386-dvd.iso",
     "ks_path": "centos-5.11/ks.cfg",
-    "memory": "512",
+    "memory": "1024",
     "metadata": "floppy/dummy_metadata.json",
     "mirror": "http://mirrors.dotsrc.org/oracle-linux",
     "mirror_directory": "EL5/U11/i386",
     "name": "oracle-5.11-i386",
     "no_proxy": "{{env `no_proxy`}}",
     "template": "oracle-5.11-i386",
-    "version": "2.2.TIMESTAMP"
+    "version": "TIMESTAMP"
   }
 }
+
